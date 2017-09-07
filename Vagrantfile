@@ -3,7 +3,7 @@
 
 
 $script = <<SCRIPT
-  yum -y install git rpm rpm-build vim java-1.7.0-openjdk-devel
+  yum -y install wget git rpm rpm-build vim java-1.7.0-openjdk-devel
   wget http://mirrors.advancedhosters.com/apache/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz
   tar -xvzf apache-maven-3.5.0-bin.tar.gz
   #Add Maven to PATH
