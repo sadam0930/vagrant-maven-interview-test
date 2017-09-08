@@ -3,9 +3,10 @@
 
 
 $script = <<SCRIPT
-  yum -y install wget git rpm rpm-build vim java-1.7.0-openjdk-devel
-  wget http://mirrors.advancedhosters.com/apache/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz
-  tar -xvzf apache-maven-3.5.0-bin.tar.gz
+  sudo apt-get update
+  sudo apt-get -y install wget git vim default-jdk maven
+  sudo echo JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64" >> /etc/environment
+  sudo source /etc/environment
   #Add Maven to PATH
   echo export PATH=/home/vagrant/apache-maven-3.5.0/bin:\$PATH >> /home/vagrant/.bashrc
 SCRIPT
@@ -21,7 +22,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "viniciusfs/centos7"
+  config.vm.box = "ubuntu/trusty64"
 
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # config.vm.network "forwarded_port", guest: 80, host: 8080
